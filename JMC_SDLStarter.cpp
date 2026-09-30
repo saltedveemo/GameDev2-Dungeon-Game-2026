@@ -2,6 +2,7 @@
 #define SDL_MAIN_USE_CALLBACKS 1  /* use the callbacks instead of main() */
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
+#include "PointerDemo.h"
 
 using namespace std;
 
@@ -15,7 +16,7 @@ static SDL_Texture* texture = NULL;
 
 static const char* ProjectName = "Dungeon Game";
 
-void StepTest();
+static PointerDemo* pointerDemo;
 
 //_____________________________________
 
@@ -34,8 +35,8 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
         return SDL_APP_FAILURE;
     }
 
-
-
+    
+    pointerDemo->DoDemo();
     return SDL_APP_CONTINUE;  /* carry on with the program! */
 }
 
@@ -51,7 +52,7 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
         // keyboard events    
         if (event->key.scancode == SDL_SCANCODE_W)
         {
-
+            
         }
         if (event->key.scancode == SDL_SCANCODE_S)
         {
@@ -103,6 +104,3 @@ void SDL_AppQuit(void* appstate, SDL_AppResult result)
 
 
 
-void StepTest() {
-
-}

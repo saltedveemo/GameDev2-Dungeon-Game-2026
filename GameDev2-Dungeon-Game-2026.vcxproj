@@ -133,6 +133,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="JMC_SDLStarter.cpp" />
+    <ClCompile Include="PointerDemo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PointerDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
