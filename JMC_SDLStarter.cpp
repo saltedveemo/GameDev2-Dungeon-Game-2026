@@ -52,7 +52,7 @@ SDL_AppResult SDL_AppEvent(void* appstate, SDL_Event* event)
         // keyboard events    
         if (event->key.scancode == SDL_SCANCODE_W)
         {
-            
+
         }
         if (event->key.scancode == SDL_SCANCODE_S)
         {
