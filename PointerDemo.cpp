@@ -45,6 +45,8 @@ void PointerDemo::MemLeakDemo()
 
 
 
+#pragma region Buddy Stuff
+
 void PointerDemo::PrintBuddyData(Buddy &targetBuddy){
 	std::cout << targetBuddy.name << "Data: \n";
 	std::cout << "	X = " << targetBuddy.rect.x << "\n";
@@ -117,6 +119,11 @@ void PointerDemo::PrintBuddies(std::list<Buddy> &buddyList){
 		cout << itBud->name << " | ";
 		itBud++;
 	}
+
+//	for (Buddy currentBuddy : buddyList) {
+//		cout << currentBuddy.name << " | ";
+//	}
+
 	cout << "\n\n--------------------------------\n\n";
 
 	InputControls(buddyList);
@@ -212,3 +219,4 @@ void PointerDemo::CreateFillerBuddy(std::list<Buddy>& buddyList, std::string nam
 	InputControls(buddyList);
 }
 
+#pragma endregion 

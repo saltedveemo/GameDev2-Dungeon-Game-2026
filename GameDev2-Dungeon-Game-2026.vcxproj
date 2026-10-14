@@ -132,10 +132,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ContainerDemo.cpp" />
     <ClCompile Include="JMC_SDLStarter.cpp" />
     <ClCompile Include="PointerDemo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ContainerDemo.h" />
     <ClInclude Include="PointerDemo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

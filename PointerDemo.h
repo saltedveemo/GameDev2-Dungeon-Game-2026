@@ -28,7 +28,6 @@ public:
 				name = "";
 				hsp = 0;
 				vsp = 0;
-
 			}
 
 			Buddy(std::string buddyName, float spawnX, float spawnY, float width, float height) {
