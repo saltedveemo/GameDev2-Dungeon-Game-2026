@@ -3,6 +3,7 @@
 #include <string>
 #include <list>
 #include <iterator>
+#include <algorithm>
 #include <SDL3/SDL.h>
 
 
@@ -11,8 +12,8 @@ class ContainerDemo
 	struct Game {
 		std::string name;
 		std::string developer;
-		int timesPlayed;
-		float price;
+	//	int timesPlayed;
+	//	float price;
 	};
 
 	//Buddy Stuff
@@ -31,14 +32,15 @@ class ContainerDemo
 			hsp = 0;
 			vsp = 0;
 		}
-
-		Buddy(std::string buddyName, float spawnX, float spawnY, float width, float height) {
-			rect = { 0, 0, 0, 0 };
-			name = buddyName;
+		
+		Buddy(std::string buddyName, float spawnX, float spawnY, float width, float height) : name(buddyName), rect({spawnX, spawnY, width, height}) {
 			hsp = 1;
 			vsp = 1;
 		}
 
+		bool operator<(const Buddy& other) {
+			return name < other.name;
+		}
 
 		void Bounce() {
 			//	this->hsp *= -1;

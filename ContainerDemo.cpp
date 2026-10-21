@@ -1,5 +1,7 @@
 #include "ContainerDemo.h"
 
+using namespace std;
+
 void ContainerDemo::DoDemo()
 {
 //std::cout << "This is the container demo\n";
@@ -9,9 +11,10 @@ void ContainerDemo::DoDemo()
 	Buddy myBuddy("Alex", 1, 2, 3, 4);
 	std::list<Buddy> myBuddies;
 
-	myBuddies.push_back(Buddy("Alex", 1, 2, 3, 4));
 	myBuddies.push_back(Buddy("Brendan", 1, 2, 3, 4));
+	myBuddies.push_back(Buddy("lex", 1, 2, 3, 4));
 	myBuddies.push_back(Buddy("Billy", 1, 2, 3, 4));
+	myBuddies.push_back(Buddy("Alex", 1, 2, 3, 4));
 
 	PrintControls(myBuddies);
 }
@@ -60,7 +63,13 @@ void ContainerDemo::PrintControls(std::list<Buddy>& buddyList) {
 	std::cout << "	3 = Kill a Buddy\n";
 	std::cout << "	4 = Clear Buddies\n";
 	std::cout << "	5 = Sort Buddies\n";
-
+	string str = "bbs";
+	if (str.compare("aeb")) {
+		std::cout << "true\n";
+	}
+	else {
+		cout << "false \n";
+	}
 	InputControls(buddyList);
 }
 
@@ -234,17 +243,23 @@ void ContainerDemo::ClearBuddies(std::list<Buddy>& buddyList)
 	InputControls(buddyList);
 }
 
+bool ContainerDemo::compareBuddyNames(const Buddy& a, const Buddy& b) {
+	return a.name < b.name;
+}
+
 void ContainerDemo::SortBuddies(std::list<Buddy>& buddyList)
 {
+	
 	std::cout << "-----------<Sort Buddies>---------\n\n";
 
 	std::cout << "Buddies have been sorted alphabetically:\n";
 
-	buddyList.sort(compareBuddyNames);
+	buddyList.sort();
 	std::cout << "| ";
 	for (Buddy currentBuddy : buddyList) {
 		std::cout << currentBuddy.name << " | ";
 	}
+
 
 	std::cout << "\n--------------------------------\n\n";
 
@@ -252,9 +267,6 @@ void ContainerDemo::SortBuddies(std::list<Buddy>& buddyList)
 }
 
 
-bool ContainerDemo::compareBuddyNames(const Buddy& a, const Buddy& b) {
-	return isless(a.name, b.name);
-}
 
 
 
