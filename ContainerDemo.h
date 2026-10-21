@@ -7,6 +7,7 @@
 #include <SDL3/SDL.h>
 
 
+
 class ContainerDemo
 {
 	struct Game {
@@ -50,11 +51,15 @@ class ContainerDemo
 			//	this->hsp *= -1;
 		}
 
+		void Render(SDL_Renderer* renderer) {
+			SDL_RenderRect(renderer, &rect);
+		//	SDL_RenderDebugText(renderer, 50, 50, name);
+		}
+
 	private:
 
 	};
-	Buddy myBuddy;
-	std::list<Buddy> myBuddies;
+	
 
 	//Buddy Functions
 	void PrintBuddyData(Buddy& targetBuddy);
@@ -65,10 +70,12 @@ class ContainerDemo
 	void KillBuddy(std::list<Buddy>& buddyList);
 	void ClearBuddies(std::list<Buddy>& buddyList);
 	void SortBuddies(std::list<Buddy>& buddyList);
-	bool compareBuddyNames(const Buddy& a, const Buddy& b);
 
 public:
+	Buddy myBuddy;
+	std::list<Buddy> myBuddies;
 	void DoDemo();
+	void RenderBuddyList(SDL_Renderer* renderer);
 
 private:
 	void ArrayDemo();

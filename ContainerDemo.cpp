@@ -8,15 +8,22 @@ void ContainerDemo::DoDemo()
 //std::cin.get();
 //ArrayDemo();
 
-	Buddy myBuddy("Alex", 1, 2, 3, 4);
+	Buddy myBuddy("Alex", 50, 20, 30, 40);
 	std::list<Buddy> myBuddies;
 
-	myBuddies.push_back(Buddy("Brendan", 1, 2, 3, 4));
-	myBuddies.push_back(Buddy("lex", 1, 2, 3, 4));
-	myBuddies.push_back(Buddy("Billy", 1, 2, 3, 4));
-	myBuddies.push_back(Buddy("Alex", 1, 2, 3, 4));
+	myBuddies.push_back(Buddy("Brendan", 50, 50, 20, 40));
+	myBuddies.push_back(Buddy("lex", 75, 47, 30, 43));
+	myBuddies.push_back(Buddy("Billy", 154, 200, 37, 35));
+	myBuddies.push_back(Buddy("Alex", 67, 120, 47, 27));
 
 	PrintControls(myBuddies);
+}
+
+void ContainerDemo::RenderBuddyList(SDL_Renderer* renderer)
+{
+	for (Buddy& currentBuddy : myBuddies) {
+		currentBuddy.Render(renderer);
+	}
 }
 
 void ContainerDemo::ArrayDemo()
@@ -241,10 +248,6 @@ void ContainerDemo::ClearBuddies(std::list<Buddy>& buddyList)
 	std::cout << "\n--------------------------------\n\n";
 
 	InputControls(buddyList);
-}
-
-bool ContainerDemo::compareBuddyNames(const Buddy& a, const Buddy& b) {
-	return a.name < b.name;
 }
 
 void ContainerDemo::SortBuddies(std::list<Buddy>& buddyList)

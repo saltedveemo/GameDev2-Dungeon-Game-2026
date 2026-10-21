@@ -4,6 +4,7 @@
 #include <SDL3/SDL_main.h>
 #include "PointerDemo.h"
 #include "ContainerDemo.h"
+#include "PolyDemo.h"
 
 using namespace std;
 
@@ -19,6 +20,7 @@ static const char* ProjectName = "Dungeon Game";
 
 static PointerDemo* pointerDemo;
 static ContainerDemo* containerDemo;
+static PolyDemo* polyDemo;
 
 //_____________________________________
 
@@ -39,8 +41,8 @@ SDL_AppResult SDL_AppInit(void** appstate, int argc, char* argv[])
 
     
 //    pointerDemo->DoDemo();
-    containerDemo->DoDemo();
-
+//    containerDemo->DoDemo();
+    polyDemo->DoDemo();
 
 
 
@@ -90,12 +92,17 @@ SDL_AppResult SDL_AppIterate(void* appstate)
 
 
     /* as you can see from this, rendering draws over whatever was drawn before it. */
-    SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);  /* dark gray, full alpha */
+    SDL_SetRenderDrawColor(renderer, 0, 0, 0, SDL_ALPHA_OPAQUE);  /* dark gray, full alpha */
     SDL_RenderClear(renderer);  /* start with a blank canvas. */
 
     // Your Update code goes here.
-    
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+    SDL_FRect rect = { 50, 50, 50, 50 };
+    SDL_RenderRect(renderer, &rect);
+    SDL_RenderDebugText(renderer, 50, 50, "THIS IS TEST 6767");
 
+    //containerDemo->myBuddy.Render(renderer);
+    
     SDL_RenderPresent(renderer);  /* put it all on the screen! */
 
     return SDL_APP_CONTINUE;  /* carry on with the program! */
