@@ -3,7 +3,7 @@
 #include <string>
 #include <list>
 #include "Spell.h"
-#include "FireSpell.h"
+
 
 class PolyDemo
 {

@@ -6,10 +6,6 @@ void PolyDemo::DoDemo()
 {
 	cout << "Start of PolyDemo\n";
 
-	Spell spell;
-	FireSpell fireSpell;
-
-	fireSpell.Setup("Flame Slash", "Fire", 8);
-	fireSpell.Cast();
-	fireSpell.CastUnique();
+	Spell spell("Flame Burst", Element::Fire, 10);
+	spell.PrintInfo();
 }

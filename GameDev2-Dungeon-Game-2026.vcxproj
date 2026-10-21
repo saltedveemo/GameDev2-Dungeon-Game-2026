@@ -133,7 +133,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ContainerDemo.cpp" />
-    <ClCompile Include="FireSpell.cpp" />
     <ClCompile Include="JMC_SDLStarter.cpp" />
     <ClCompile Include="PointerDemo.cpp" />
     <ClCompile Include="PolyDemo.cpp" />
@@ -141,7 +140,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ContainerDemo.h" />
-    <ClInclude Include="FireSpell.h" />
     <ClInclude Include="PointerDemo.h" />
     <ClInclude Include="PolyDemo.h" />
     <ClInclude Include="Spell.h" />
